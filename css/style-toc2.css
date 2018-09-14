@@ -1,0 +1,155 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+}
+
+main {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+}
+
+h1,
+h2,
+ol strong {
+  text-transform: uppercase;
+}
+
+h1 {
+  font-size: 1.7em;
+}
+
+h1 span {
+  font-weight: lighter;
+}
+
+ol strong {
+  font-family: sans-serif;
+}
+
+.title-container {
+  align-items: center;
+  display: flex;
+  padding: 1em;
+  text-align: center;
+}
+
+.featured-image {
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 10em;
+  margin-top: 0;
+  position: relative;
+  width: 100%;
+}
+
+.featured-image p {
+  bottom: 0;
+  color: white;
+  font-size: 1.5em;
+  position: absolute;
+  right: 1em;
+}
+
+.sub-title-container {
+  grid-column: 1 / 3;
+  margin: 0;
+  padding: 0 1em;
+}
+
+.features-list,
+.sections-list {
+  grid-column: 1 / 3;
+  list-style-type: none;
+  margin: 0;
+  padding: 0 1em;
+}
+
+.page-num {
+  font-size: 2em;
+}
+
+.features-list_item {
+  display: flex;
+}
+
+.features-list_item .num {
+  flex: 1;
+  text-align: right;
+}
+
+.features-list_item .description {
+  flex: 4;
+  margin-left: 1em;
+  margin-top: 0;
+}
+
+#feature-1 {
+  background-image: url(https://source.unsplash.com/qMoYF-4LEY4/1600x900);
+}
+#feature-2 {
+  background-image: url(https://source.unsplash.com/CXys6xyRx_M/1600x900);
+}
+#feature-3 {
+  background-image: url(https://source.unsplash.com/Dw1if6EdzXE/1600x900);
+}
+#feature-4 {
+  background-image: url(https://source.unsplash.com/f3PRhiYEfkM/1600x900);
+  grid-column: 1 / 3;
+}
+
+@media screen and (min-width: 768px) {
+  main {
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: 6em minmax(20em, 1fr) 4em max-content 4em max-content;
+  }
+  .title-container {
+    grid-column: 1 / 5;
+  }
+  .featured-image {
+    grid-row: 2 / 3;
+    height: 100%;
+  }
+  #feature-4 {
+    grid-column: unset;
+  }
+  .features-list,
+  .sections-list {
+    grid-column: 1 / 4;
+  }
+  .sections-list {
+    display: flex;
+  }
+  .sections-list_item .num {
+    flex: 1;
+    text-align: right;
+  }
+
+  .sections-list_item .description {
+    flex: 4;
+    margin-left: 1em;
+    margin-top: 0;
+  }
+}
+
+@media screen and (min-width: 992px) {
+  #sections {
+    grid-column: 4 / 6;
+    grid-row: 3 / 4;
+  }
+  .sections-list {
+    display: block;
+    grid-column: 4 / 5;
+    grid-row: 4 / 5;
+  }
+  .sections-list_item {
+    display: block;
+  }
+  .sections-list_item .num {
+    text-align: left;
+    padding: 0 1em;
+  }
+}
